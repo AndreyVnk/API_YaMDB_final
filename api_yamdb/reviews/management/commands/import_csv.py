@@ -1,7 +1,6 @@
 import csv
 
 from django.core.management.base import BaseCommand, CommandError
-
 from reviews.models import Category, Comment, Genre, GenreTitle, Review, Title
 from users.models import CustomUser
 
@@ -99,7 +98,7 @@ class Command(BaseCommand):
                 self.style.SUCCESS(f'Successfully imported {model_name}\n'))
         return
 
-    def parse_csv_genreTitle(self, csv_file, model_name):
+    def parse_csv_genretitle(self, csv_file, model_name):
         if model_name == 'GenreTitle':
             for row in csv_file:
                 GenreTitle.objects.update_or_create(
