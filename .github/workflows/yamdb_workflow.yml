@@ -47,7 +47,7 @@ jobs:
           install: true
       - name: Build
         run: |
-          docker build ./api_yamdb/Dockerfile
+          buildx build ./api_yamdb/
       - name: Login to Docker 
         uses: docker/login-action@v1 
         with:
