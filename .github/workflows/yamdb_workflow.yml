@@ -15,22 +15,14 @@ jobs:
 
     - name: Install dependencies
       run: | 
-        # обновление pip
         python -m pip install --upgrade pip 
-        # установка flake8 и его плагинов
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
-        # установка зависимостей
         cd ./api_yamdb/
         pip install -r requirements.txt 
 
     - name: Test with flake8 and django tests
       run: |
-        # запуск проверки проекта по flake8
         python -m flake8
-        # перейти в папку, содержащую manage.py — 
-        # <корневая_папка_infra_actions>/<папка_проекта>/manage.py
-        # cd infra_project/
-        # запустить написанные разработчиком тесты
         pytest
 
   build_and_push_to_docker_hub:
@@ -47,7 +39,7 @@ jobs:
           install: true
       - name: Build
         run: |
-          buildx build ./api_yamdb/
+          docker build -t api_yamdb ./api_yamdb/
       - name: Login to Docker 
         uses: docker/login-action@v1 
         with:
