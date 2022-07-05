@@ -6,7 +6,7 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     env_file:
-      - ./.env
+      - ./infra/.env
   web:
     image:  veneklasen/api_yamdb:latest
     restart: always
@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env
+      - ./infra/.env
   nginx:
     image: nginx:1.21.3-alpine
     ports:
