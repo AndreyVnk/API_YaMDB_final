@@ -58,6 +58,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
+            sudo cd ~
             sudo docker pull veneklasen/api_yamdb:latest
             sudo docker-compose stop
             sudo docker-compose rm web
