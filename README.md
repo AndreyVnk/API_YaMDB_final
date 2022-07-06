@@ -32,9 +32,9 @@ DOCKER_USERNAME=<docker login>
 DOCKER_PASSWORD=<docker password>
 USER=<server_user>
 HOST=<server_ip_address>
-SSH_KEY=<public_key> # cat ~/.ssh/id_rsa (linux)
-TELEGRAM_TO=<chat ID> # для отправки уведомлений в телеграм
-TELEGRAM_TOKEN=<bot_token>
+SSH_KEY=<public_key> # cat ~/.ssh/id_rsa (linux) на машине имеющей доступ к серверу
+TELEGRAM_TO=<chat ID> # для отправки уведомлений в телеграм через бота
+TELEGRAM_TOKEN=<bot_token> # для отправки уведомлений в телеграм через бота
 SECRET_KEY=secret_django_key
 DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
 DB_NAME=postgres # имя базы данных
@@ -54,13 +54,13 @@ https://docs.docker.com/engine/
 ```
 ### 5. Выполнить копирование файлов docker-compose.yaml и nginx/default.conf на сервер
 ```
-scp ./infra/docker-compose.yaml <user>@<ip_address>:/home/<user>/docker-compose.yaml
-scp ./infra/nginx/default.conf <user>@<ip_address>:/home/<user>/nginx/default.conf
+scp infra/docker-compose.yaml <user>@<ip_address>:/home/<user>/docker-compose.yaml
+scp infra/nginx/default.conf <user>@<ip_address>:/home/<user>/nginx/default.conf
 ```
 ### 6. Выполнить commit и push проекта
 ```
 git add .
-git commit -m '*something*'
+git commit -m 'something'
 git push
 ```
 ### 7. На сервере выполнить следующие команды
