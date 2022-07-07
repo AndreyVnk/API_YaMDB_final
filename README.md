@@ -74,6 +74,6 @@ sudo docker-compose exec web python manage.py changepassword <username superuser
 
 Пример проекта доступен по http://51.250.16.238/api/v1/ . Документация к API - http://51.250.16.238/redoc/ .
 
-**Авторы**
+**Авторы** 
 
 AndreyVnk, deorz, idudnikov
