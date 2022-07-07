@@ -43,7 +43,7 @@ POSTGRES_PASSWORD=zzzxxxcc # пароль для подключения к БД 
 DB_HOST=db # название сервиса (контейнера)
 DB_PORT=5432 # порт для подключения к БД
 ```
-### 3. Изменить настройки default.conf в папке nginx/
+### 3. Изменить настройки default.conf в папке infra/nginx/
 ```
 server_name <server_ip_address>;
 ```
