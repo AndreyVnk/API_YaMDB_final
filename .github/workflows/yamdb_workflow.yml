@@ -71,6 +71,7 @@ jobs:
           sudo docker pull veneklasen/api_yamdb:latest
           sudo docker-compose stop
           sudo docker-compose rm web
+          rm .env
           touch .env
           echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
           echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -78,6 +79,8 @@ jobs:
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+          echo EMAIL=${{ secrets.EMAIL }} >> .env
+          echo PWD=${{ secrets.PWD }} >> .env
           sudo docker-compose up -d
           # sudo docker-compose exec web python manage.py migrate
           # sudo docker-compose exec web python manage.py collectstatic --no-input 
